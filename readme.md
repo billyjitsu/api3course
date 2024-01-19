@@ -34,12 +34,20 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 - **API3's Approach**: API3 facilitates a decentralized approach to integrate these APIs into blockchain environments, enhancing functionality and security using the Airnode infrastructure.
 
 #### Airnode
-- **Introduction to Airnode**: Detailed explanation of what Airnode is, its purpose in the API3 ecosystem, and how it functions as a bridge between APIs and smart contracts.
-- **Design and Operation**: In-depth look at how Airnode is designed for ease of use, minimal maintenance, and its self-operating nature. Exploration of real-world use cases where Airnode simplifies API integration for providers.
+- **Introduction to Airnode**: The Airnode is an architecture created by API3 to be the relay of data offchain bringing it onchain.  There are two types of oracles:  
+- A push oracle, where the data is sent to the blockchain constantly via a certain criteria.  A price feed is a great example of a push oracle as we need to know the latest update of what the value of an asset is at any given time and need that onchain data immediately.
+- A pull oracle, where the data is requested at the time of need and we wait for a reponse of that request.  A random number is a great example of how this would work.  We need one for a mint, send the mint request wait for the request and once the data is received do some logic.  This is a less time sensitive request.
+
+![Airnode](./images/Airnode/Airnode%20image.png)
+
 
 #### First-party vs. Third-party Oracles
 - **Contrasting Oracles**: A thorough comparison between first-party and third-party oracles, focusing on differences in operation, security, and reliability.
 - **Examples**: Real-life examples illustrating the use of both types of oracles in different blockchain scenarios. For instance, how a first-party oracle might be used in a decentralized finance application to provide real-time stock prices.
+
+![1st Party](./images/Airnode/1st%20party.png)
+![3rd Party](./images/Airnode/3rd%20party.png)
+
 
 #### Data Feeds (dAPIs)
 - **Introduction to dAPIs**: Detailed explanation of decentralized APIs (dAPIs), how they function within the API3 ecosystem, and their importance.
@@ -47,13 +55,33 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 
 ---
 
-This detailed approach to the first two lessons provides a deep understanding of the API connectivity problem and the key components of API3. Each section is structured to offer comprehensive knowledge, supplemented with real-world examples and use cases to contextualize the concepts. The course would continue similarly for the remaining lessons, covering all aspects of API3 and Airnode in detail.
+### Lesson 3: Breakdown of Decentralized APIs (dAPIs)
 
-Continuing with the detailed course content for "Deep Dive into API3 and Airnode":
+#### What are dAPIs?
+- **Definition and Function**: Comprehensive exploration of decentralized APIs (dAPIs), their structure, functionality, and role in the API3 ecosystem.
+- **Components of dAPIs**: Detailed analysis of the components of dAPIs, such as beacons and beacon sets, and their specific functions.
 
----
+#### Functionality and Accessibility
+- **Connecting Smart Contracts to Data Feeds**: In-depth discussion on how dAPIs enable smart contracts to access accurate and reliable real-world data feeds.
+- **Real-World Example**: An illustrative example of a decentralized application utilizing dAPIs, such as a dApp in the insurance sector that uses real-time global data to calculate premiums.
 
-### Lesson 3: Introduction to First-Party Oracles
+#### Practical Application
+- **Case Study**: A detailed case study of a specific dApp leveraging dAPIs, highlighting the practical benefits, implementation process, and the challenges addressed.
+
+### Lesson 4: Understanding Quantum Random Number Generation (QRNG) in API3
+
+#### Introduction to QRNG
+- **Concept and Importance**: Comprehensive overview of Quantum Random Number Generation, its scientific basis, and its critical role in enhancing blockchain security and reliability.
+- **API3's Approach to QRNG**: Exploration of how API3 incorporates QRNG technology to offer a superior level of randomness in data generation, crucial for certain blockchain applications.
+
+#### The Role of ANU Quantum Random Numbers API
+- **Collaboration with ANU**: Detailed explanation of API3's collaboration with the Australian National University, focusing on how the ANU Quantum Random Numbers API contributes to QRNG services.
+- **Technical Breakdown**: A deeper look into the quantum mechanics involved in the generation of random numbers, explaining how this technology is practically applied in the blockchain context.
+
+#### Real-World Implications
+- **Use Cases**: Discussion on various use cases of QRNG in blockchain, such as in gaming, financial services, or any application requiring high levels of data unpredictability and security.
+
+### Lesson 5: Introduction to First-Party Oracles
 
 #### Defining First-Party Oracles
 - **Explanation**: Detailed discussion on what first-party oracles are, their significance in blockchain technology, and how they differ from traditional oracles.
@@ -67,32 +95,6 @@ Continuing with the detailed course content for "Deep Dive into API3 and Airnode
 #### Governance in First-Party Oracles
 - **Decentralized Governance**: Detailed explanation of the decentralized governance model in first-party oracles, focusing on how it ensures trustlessness and security in data provision.
 - **Real-World Implication**: Case studies demonstrating the effectiveness of decentralized governance in maintaining data integrity and reliability.
-
-### Lesson 4: Breakdown of Decentralized APIs (dAPIs)
-
-#### What are dAPIs?
-- **Definition and Function**: Comprehensive exploration of decentralized APIs (dAPIs), their structure, functionality, and role in the API3 ecosystem.
-- **Components of dAPIs**: Detailed analysis of the components of dAPIs, such as beacons and beacon sets, and their specific functions.
-
-#### Functionality and Accessibility
-- **Connecting Smart Contracts to Data Feeds**: In-depth discussion on how dAPIs enable smart contracts to access accurate and reliable real-world data feeds.
-- **Real-World Example**: An illustrative example of a decentralized application utilizing dAPIs, such as a dApp in the insurance sector that uses real-time global data to calculate premiums.
-
-#### Practical Application
-- **Case Study**: A detailed case study of a specific dApp leveraging dAPIs, highlighting the practical benefits, implementation process, and the challenges addressed.
-
-### Lesson 5: Understanding Quantum Random Number Generation (QRNG) in API3
-
-#### Introduction to QRNG
-- **Concept and Importance**: Comprehensive overview of Quantum Random Number Generation, its scientific basis, and its critical role in enhancing blockchain security and reliability.
-- **API3's Approach to QRNG**: Exploration of how API3 incorporates QRNG technology to offer a superior level of randomness in data generation, crucial for certain blockchain applications.
-
-#### The Role of ANU Quantum Random Numbers API
-- **Collaboration with ANU**: Detailed explanation of API3's collaboration with the Australian National University, focusing on how the ANU Quantum Random Numbers API contributes to QRNG services.
-- **Technical Breakdown**: A deeper look into the quantum mechanics involved in the generation of random numbers, explaining how this technology is practically applied in the blockchain context.
-
-#### Real-World Implications
-- **Use Cases**: Discussion on various use cases of QRNG in blockchain, such as in gaming, financial services, or any application requiring high levels of data unpredictability and security.
 
 
 ### Lesson 6: Exploring Airnode's Self-Operating Feature
