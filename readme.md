@@ -42,28 +42,52 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 
 
 #### First-party vs. Third-party Oracles
-- **Contrasting Oracles**: A thorough comparison between first-party and third-party oracles, focusing on differences in operation, security, and reliability.
-- **Examples**: Real-life examples illustrating the use of both types of oracles in different blockchain scenarios. For instance, how a first-party oracle might be used in a decentralized finance application to provide real-time stock prices.
+- **Contrasting Oracles**: Many oracles send data on chain but how do we know the source in which the the data is coming from?  When getting a price feed for ETH, what is the source of price feed?  Coingecko, Coinbase, Coin Market Cap?  Most services, also combine (aggregate) the data to get the averaged value but how do we know the same date wasn't used more than once?  API3 uses a first party oracle system in wich the data source provider must host their own "Airnode" to provide the data onchain.  API3 does not act as a middle man in this feed and users can choose to read that single source.  API3 aggregates all these first party data feeds and provides that as a service and can reversabley be proven that the feed came from that specific source.
 
 ![1st Party](./images/Airnode/1st%20party.png)
 ![3rd Party](./images/Airnode/3rd%20party.png)
 
 
-#### Data Feeds (dAPIs)
-- **Introduction to dAPIs**: Detailed explanation of decentralized APIs (dAPIs), how they function within the API3 ecosystem, and their importance.
-- **Use Cases**: Discussion of various scenarios where dAPIs can enhance blockchain applications, like in supply chain management or in decentralized insurance models.
 
 ---
 
-### Lesson 3: Breakdown of Decentralized APIs (dAPIs)
+### Lesson 3: Decentralized APIs (dAPIs) - Price Feeds
 
 #### What are dAPIs?
-- **Definition and Function**: Comprehensive exploration of decentralized APIs (dAPIs), their structure, functionality, and role in the API3 ecosystem.
-- **Components of dAPIs**: Detailed analysis of the components of dAPIs, such as beacons and beacon sets, and their specific functions.
+- **Definition and Function**: Decentralized APIs (dAPIs), are essentialy price feeds.  They provide the connection from the offchain APIs for smart contract usage.
 
 #### Functionality and Accessibility
 - **Connecting Smart Contracts to Data Feeds**: In-depth discussion on how dAPIs enable smart contracts to access accurate and reliable real-world data feeds.
 - **Real-World Example**: An illustrative example of a decentralized application utilizing dAPIs, such as a dApp in the insurance sector that uses real-time global data to calculate premiums.
+
+```Solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.17;
+
+import "@api3/contracts/v0.8/interfaces/IProxy.sol";
+
+contract DataFeedReaderExample {
+    // The proxy contract address obtained from the API3 Market UI.
+    address public proxyAddress;
+
+    // Set the price feed our contract wants to read
+    function setProxyAddress(address _proxyAddress) public {
+        proxyAddress = _proxyAddress;
+    }
+
+    function readDataFeed()
+        external
+        view
+        returns (int224 value, uint256 timestamp)
+    {
+        // Use the IProxy interface to read a dAPI via its
+        // proxy contract .
+        (value, timestamp) = IProxy(proxyAddress).read();
+        // If you have any assumptions about `value` and `timestamp`,
+        // make sure to validate them after reading from the proxy.
+    }
+}
+```
 
 #### Practical Application
 - **Case Study**: A detailed case study of a specific dApp leveraging dAPIs, highlighting the practical benefits, implementation process, and the challenges addressed.
