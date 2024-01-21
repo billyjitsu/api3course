@@ -58,7 +58,8 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 
 #### Functionality and Accessibility
 - **Connecting Smart Contracts to Data Feeds**: In-depth discussion on how dAPIs enable smart contracts to access accurate and reliable real-world data feeds.
-- **Real-World Example**: An illustrative example of a decentralized application utilizing dAPIs, such as a dApp in the insurance sector that uses real-time global data to calculate premiums.
+- **Real-World Example**: 
+To read a dAPI value in a smart contract, import the IProxy.sol interface and call the read() function. Here's an example:
 
 ```Solidity
 // SPDX-License-Identifier: MIT
@@ -88,15 +89,23 @@ contract DataFeedReaderExample {
     }
 }
 ```
+You'll have to set the proxyAddress using the setProxyAddress() function. You can get the proxyAddress for activated dAPIs from within the data feed dashboard through the [API3 Market](https://market.api3.org/dapis)
+
+
+---
+Add gif for proxy contract
+---
 
 #### Practical Application
-- **Case Study**: A detailed case study of a specific dApp leveraging dAPIs, highlighting the practical benefits, implementation process, and the challenges addressed.
+- **What the Contract Returns**: When you click on readDataFeed it will return 2 individual numbers.
+1. The Current Price of the Asset in 18 decimal format
+2. The block.timestamp of when the price feed was last updated. (To ensure we don't have a stale price feed)
 
 ### Lesson 4: Understanding Quantum Random Number Generation (QRNG) in API3
 
 #### Introduction to QRNG
-- **Concept and Importance**: Comprehensive overview of Quantum Random Number Generation, its scientific basis, and its critical role in enhancing blockchain security and reliability.
-- **API3's Approach to QRNG**: Exploration of how API3 incorporates QRNG technology to offer a superior level of randomness in data generation, crucial for certain blockchain applications.
+- **The Random Number Issue**: Currently, blockchains are mathematically deterministic.  Tricks like block.timestamp and adding a varitant can be calculated by a validator and gamed to get the result they want ruining the fairness of the idea.
+- **API3's Approach to QRNG**: API3 solves this issue by using a Request/Response approach in a two transaction system.
 
 #### The Role of ANU Quantum Random Numbers API
 - **Collaboration with ANU**: Detailed explanation of API3's collaboration with the Australian National University, focusing on how the ANU Quantum Random Numbers API contributes to QRNG services.
