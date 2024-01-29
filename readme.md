@@ -7,11 +7,7 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 1. Understanding the API Connectivity Problem
 2. Key Components of API3
 3. Breakdown of Decentralized APIs (dAPIs)
-4. Understanding Quantum Random Number Generation (QRNG) in API3
-5. Introduction to First-Party Oracles
-6. Exploring Airnode's Self-Operating Feature
-7. Additional Features of Airnode
-8. How Airnode Works
+
 
 ### Lesson 1: Understanding the API Connectivity Problem
 
@@ -96,10 +92,31 @@ You'll have to set the proxyAddress using the setProxyAddress() function. You ca
 Add gif for proxy contract
 ---
 
+Once you have set your contracts proxy address, you contract is ready to read the external price feed and be usable for whatever logic you want to use that price data for.
+
 #### Practical Application
 - **What the Contract Returns**: When you click on readDataFeed it will return 2 individual numbers.
 1. The Current Price of the Asset in 18 decimal format
 2. The block.timestamp of when the price feed was last updated. (To ensure we don't have a stale price feed)
+
+The function `readDataFeed()` will return two values.  The first value being the price of the asset in 18 decimals. The second value is the timestamp of when the price was last updated.  This is extremely important in production because we want to make sure that our price feeds are active and not stale.
+API3 updates price feeds under two conditions, a change in price (different deviations 1%, 0.5% or 0.25%) or if the price hasn't change that much in 24 hours it will update just to make sure the price feed is active (think of a stable coin like USDC)
+
+Looking for framework examples?
+
+- [Foundry Example](https://github.com/api3-ecosystem/data-feed-reader-example-foundry)
+
+- [Hardhat Example](https://github.com/api3dao/data-feed-reader-example)
+
+
+
+- ****************** Cut off **********
+4. Understanding Quantum Random Number Generation (QRNG) in API3
+5. Introduction to First-Party Oracles
+6. Exploring Airnode's Self-Operating Feature
+7. Additional Features of Airnode
+8. How Airnode Works
+
 
 ### Lesson 4: Understanding Quantum Random Number Generation (QRNG) in API3
 
