@@ -1,15 +1,15 @@
-## Oracles and API3 (Price Feeds and Random Numbers)
+## Oracles and API3 (Price Feeds)
 
 ### About this lesson
-In this course lesson, you will learn how oracles play a vital role in bringing offchain data to the blockchain.  The data we will be refering to in course is Price Feeds and Random numbers.
+In this course lesson, you will learn how oracles play a vital role in bringing offchain data to the blockchain.  The data we will be refering to in course is Price Feeds.
 
 ### Lesson Contents
 1. Understanding the API Connectivity Problem
 2. Key Components of API3
-3. Breakdown of Decentralized APIs (dAPIs)
+3. Breakdown of Decentralized APIs (dAPIs) - Price Feeds
 
 
-### Lesson 1: Understanding the API Connectivity Problem
+### Understanding the API Connectivity Problem
 
 #### Introduction
 - **Objective**: To understand the challenge of integrating off-chain data with blockchain technologies, known as the API Connectivity Problem.
@@ -23,7 +23,7 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 - **API3's Role**: API3 aims to bridge the gap by allowing decentralized access to off-chain data, enhancing blockchain applications' functionality permissionlessly.
 - **Benefits**: Detailed analysis of the advantages of API3's approach, including increased security, reduced reliance on intermediaries, and enhanced data integrity.
 
-### Lesson 2: Key Components of API3
+### Key Components of API3
 
 #### APIs in Blockchain
 
@@ -47,7 +47,7 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 
 ---
 
-### Lesson 3: Decentralized APIs (dAPIs) - Price Feeds
+### Decentralized APIs (dAPIs) - Price Feeds
 
 #### What are dAPIs?
 - **Definition and Function**: Decentralized APIs (dAPIs), are essentialy price feeds.  They provide the connection from the offchain APIs for smart contract usage.
@@ -89,7 +89,8 @@ You'll have to set the proxyAddress using the setProxyAddress() function. You ca
 
 
 ---
-Add gif for proxy contract
+![MarketPlace](./images/dAPI/market.gif)
+
 ---
 
 Once you have set your contracts proxy address, you contract is ready to read the external price feed and be usable for whatever logic you want to use that price data for.
@@ -102,80 +103,10 @@ Once you have set your contracts proxy address, you contract is ready to read th
 The function `readDataFeed()` will return two values.  The first value being the price of the asset in 18 decimals. The second value is the timestamp of when the price was last updated.  This is extremely important in production because we want to make sure that our price feeds are active and not stale.
 API3 updates price feeds under two conditions, a change in price (different deviations 1%, 0.5% or 0.25%) or if the price hasn't change that much in 24 hours it will update just to make sure the price feed is active (think of a stable coin like USDC)
 
+Once you have your data, you can add your logic to your smart contract such as setting a consistent price for an NFT or donation or a borrow lending dapp.
+
 Looking for framework examples?
 
 - [Foundry Example](https://github.com/api3-ecosystem/data-feed-reader-example-foundry)
 
 - [Hardhat Example](https://github.com/api3dao/data-feed-reader-example)
-
-
-
-- ****************** Cut off **********
-4. Understanding Quantum Random Number Generation (QRNG) in API3
-5. Introduction to First-Party Oracles
-6. Exploring Airnode's Self-Operating Feature
-7. Additional Features of Airnode
-8. How Airnode Works
-
-
-### Lesson 4: Understanding Quantum Random Number Generation (QRNG) in API3
-
-#### Introduction to QRNG
-- **The Random Number Issue**: Currently, blockchains are mathematically deterministic.  Tricks like block.timestamp and adding a varitant can be calculated by a validator and gamed to get the result they want ruining the fairness of the idea.
-- **API3's Approach to QRNG**: API3 solves this issue by using a Request/Response approach in a two transaction system.
-
-#### The Role of ANU Quantum Random Numbers API
-- **Collaboration with ANU**: Detailed explanation of API3's collaboration with the Australian National University, focusing on how the ANU Quantum Random Numbers API contributes to QRNG services.
-- **Technical Breakdown**: A deeper look into the quantum mechanics involved in the generation of random numbers, explaining how this technology is practically applied in the blockchain context.
-
-#### Real-World Implications
-- **Use Cases**: Discussion on various use cases of QRNG in blockchain, such as in gaming, financial services, or any application requiring high levels of data unpredictability and security.
-
-### Lesson 5: Introduction to First-Party Oracles
-
-#### Defining First-Party Oracles
-- **Explanation**: Detailed discussion on what first-party oracles are, their significance in blockchain technology, and how they differ from traditional oracles.
-- **API3's Implementation**: Exploration of how API3 leverages first-party oracles, emphasizing direct data provision from the source to the blockchain, and the benefits of this model over traditional methods.
-
-#### Advantages of First-Party Oracles
-- **Security**: In-depth analysis of how first-party oracles enhance data security by eliminating intermediaries and reducing points of failure.
-- **Cost Efficiency and Transparency**: Examination of how first-party oracles reduce operational costs and increase transparency in data transactions.
-- **Flexibility**: Discussion on the adaptability of first-party oracles in various blockchain applications, supported by real-world examples.
-
-#### Governance in First-Party Oracles
-- **Decentralized Governance**: Detailed explanation of the decentralized governance model in first-party oracles, focusing on how it ensures trustlessness and security in data provision.
-- **Real-World Implication**: Case studies demonstrating the effectiveness of decentralized governance in maintaining data integrity and reliability.
-
-
-### Lesson 6: Exploring Airnode's Self-Operating Feature
-
-#### Airnode's Autonomous Operation
-- **Self-Operating Nature**: Detailed exploration of Airnode’s self-operating feature, explaining how it allows API providers to autonomously run their own oracle nodes without intensive management or technical expertise.
-- **Benefits for API Providers**: In-depth discussion on how this feature simplifies the process for API providers, reducing the need for constant monitoring and maintenance.
-
-#### Practical Benefits
-- **Reduced Overhead**: Analysis of how Airnode’s self-operating nature leads to reduced operational overhead for API providers, with examples illustrating cost savings and efficiency gains.
-- **Case Example**: A real-life case study of an API provider using Airnode, showcasing the ease of setup, operation, and the impact on their blockchain service offering.
-
-### Lesson 7: Additional Features of Airnode
-
-#### Advanced Functionalities
-- **Feature Overview**: Comprehensive review of Airnode's additional features such as pre and post-processing, authentication, and authorizations, explaining each feature in detail and its importance.
-- **Enhancing dApp Functionality**: Discussion on how these advanced features can be leveraged in different blockchain applications to enhance functionality, security, and user experience.
-
-#### Use Case Scenarios
-- **Example Applications**: Presentation of several use case scenarios demonstrating how Airnode’s additional features can be utilized in blockchain applications, with examples ranging from finance to supply chain management.
-
-### Lesson 8: How Airnode Works
-
-#### Airnode's Mechanism
-- **In-Depth Explanation**: Detailed description of the operational mechanism of Airnode, covering how it retrieves data from off-chain sources and provides it on-chain.
-- **Technical Aspects**: Exploration of the technical features that facilitate Airnode’s operation, such as its stateless nature and serverless architecture, discussing the benefits and efficiencies these features provide.
-
-#### Security in Airnode
-- **Defensive Design Philosophy**: A thorough examination of the security measures and design philosophies behind Airnode, detailing how these contribute to the overall security and reliability of the oracle node.
-- **Real-World Example**: A case study illustrating Airnode’s security design in action, focusing on a specific blockchain application where Airnode’s security features played a crucial role.
-
----
-
-This course content provides an extensive and detailed understanding of API3 and Airnode, covering technical aspects, practical applications, and real-world examples. Each lesson is carefully crafted to provide comprehensive knowledge, supplemented with case studies and use case scenarios to contextualize the concepts in practical settings. The course aims to equip learners with a deep understanding of these pivotal blockchain technologies, preparing them for practical application and further exploration in the field.
