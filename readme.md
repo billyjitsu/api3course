@@ -1,5 +1,56 @@
 ## Oracles and API3 (Price Feeds)
 
+<!-- Hey Billy, 
+
+I added your initial commit so I have a reminder/easy view of what the track plan is. Hope you don't mind.
+
+re the current README.md: I'm doing quite a bit of guessing about the intentions with this file, so it's hard to give feedback with much confidence. Sorry to say.
+
+Does it represent one lesson, or three from the eight you proposed? 
+
+How many pages on Academy will this section/page need after you build it out/populate it more? One or three? 
+
+
+The topics and sub-topics are really clear and nicely signposted, like I mentioned to you before, and the ideas to expand on are also clear.
+
+Can you give me an idea of how much you 'will' expand on all the bullet points? 
+E.g. 'Airnode' and 'First-party vs. Third-party Oracles' look like they
+'might' be complete at this stage. But the most of the rest look like they are
+intentions to populate. 
+
+I was hoping to scaffold in some more around this and give more constructive feedback, but I'm stuck unless I have an idea about the above points. Can you share more of what's in your mind :) Cheers :)
+
+Hopefully the following can help with a bit with communicating ideas with this scaffolding and for the learner 
+
+It's a helpful 'concept' to create a meaningful flow for your track. I (and my colleagues) use this methodology if I'm planning a series of lessons. It's super adaptable. It might seem a bit pedantic, but it doesn't need to be rigid in language that you use. If you can envisage these below as parameters,you can always chop and change the values/arguments to suit your needs - just play musical chairs with them, if you feel a lesson is too long or two short: 
+
+intro: build the context: where is the learner coming from => just got here and I assume you (learner) know about x, y  and z /what will learner do => a, b, c? 
+< lesson > 
+summary: what has learner just learned a, b, c < quiz > outro: what is their next step = d, e and f? 
+
+repeat:
+intro: build the context: where is the learner coming from => knows about a, b and c/what will learner do => d, e and f? 
+< lesson > 
+summary: what has learner just learned => d, e and f < quiz > outro: what is their next step = > g, h, and i? 
+
+repeat:
+intro: build the context: where is the learner coming from => knows about .... /what will learner do ...? 
+< lesson > 
+summary: what has learner just learned ... < quiz > outro: what is their next step ...?
+
+repeat: etc
+
+When we add in some warm-up quizzes it will also complement the intro in building context as well, by the way. It's better to get it in, and edit it out afterwards if it's repetitive or boring or whatever - or to give it a personal shake up for the better.
+
+Also, it means if someone's doing a search, and they land in the middle of your track, they know there is a before lesson, and after lesson. But more importantly, when a learner comes back after a day or two, from one lesson to the next - let's face it, they've forgotten at least 50% of it - humans - we don't look like goldfish, but we share some of their traits. see https://en.wikipedia.org/wiki/Forgetting_curve
+
+
+re: Shared workspace:
+
+And it would be handier if we created a workbranch(es) on Academy v2, so we can use the Academy components - what say you? I can add in the (warm-up, check-point and final) quiz components for example - it might give you a better feel. I find this README.md is a messy way to communicate and exchange feedback to be really honest - all on the one plane. 
+
+Ciao for now! -->
+
 ### About this lesson
 In this course lesson, you will learn how oracles play a vital role in bringing offchain data to the blockchain.  The data we will be refering to in course is Price Feeds.
 
@@ -7,7 +58,6 @@ In this course lesson, you will learn how oracles play a vital role in bringing 
 1. Understanding the API Connectivity Problem
 2. Key Components of API3
 3. Breakdown of Decentralized APIs (dAPIs) - Price Feeds
-
 
 ### Understanding the API Connectivity Problem
 
